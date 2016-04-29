@@ -5,10 +5,10 @@
 	<title>Loteria</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
 </head>
-<body>
-    <div ng-app="">
-	 	<p>Name : <input type="text" ng-model="name"></p>
-	 	<h1>Hello {{name}}</h1>
+<body data-ng-app="loteriaApp">
+    <div data-ng-controller="loteriaController as vm">
+	 	<p>Name : <input type="text" ng-model="vm.name"></p>
+	 	<h1>Hello {{vm.name}}</h1>
 	</div>
 </body>
 </html>

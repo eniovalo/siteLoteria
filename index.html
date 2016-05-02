@@ -3,10 +3,11 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Loteria</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="lib/angularjs-1.5.5/angular.min.js"></script>
+    <script src="loteria-app.js"></script>
 </head>
-<body data-ng-app="loteriaApp">
-    <div data-ng-controller="loteriaController as vm">
+<body data-ng-app="LoteriaApp">
+    <div data-ng-controller="LoteriaController as vm">
 	 	<p>Name : <input type="text" ng-model="vm.name"></p>
 	 	<h1>Hello {{vm.name}}</h1>
 	</div>

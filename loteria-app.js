@@ -1,12 +1,15 @@
 (function (angular){
-	angular
-	.module('loteriaApp', [])
-	.controller('loteriaController', loteriaController);
+	var app = angular.module('LoteriaApp', []);
+	var controller = app.controller('LoteriaController', LoteriaController);
 
-	function loteriaController($scope){
+    controller.$inject = ['$scope'];
+
+	function LoteriaController($scope){
 		var vm = this;
+
+        console.log('teste');
 		
 		vm.name = 'teste';
-	};
-})(angular);
+	}
 
+})(angular);

@@ -10,8 +10,14 @@
 </head>
 <body data-ng-app="LoteriaApp">
     <div data-ng-controller="LoteriaController as vm">
-	 	<p>Name : <input type="text" ng-model="vm.name"></p>
-	 	<h1>Hello {{vm.name}}</h1>
+	  <input type="button" value="gerar jogo" 
+		data-ng-click="vm.gerarJogo()"/>
+	  <fieldset>
+		<legend>Jogo gerado</legend>
+		<ul>
+		  <li data-ng-repeat="numero in vm.jogoGerado">{{numero}}</li>
+		</ul>
+	  </fieldset>
 	</div>
 </body>
 </html>

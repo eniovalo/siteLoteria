@@ -15,7 +15,7 @@
 	  <fieldset>
 		<legend>Jogo gerado</legend>
 		<ul>
-		  <li data-ng-repeat="numero in vm.jogoGerado">{{numero}}</li>
+		  <li data-ng-repeat="numero in vm.jogoGerado track by $index">{{numero}}</li>
 		</ul>
 	  </fieldset>
 	</div>

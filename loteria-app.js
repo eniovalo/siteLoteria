@@ -13,6 +13,7 @@
 			maiorNumero: 60,
 			quantidadeNumeros: 6
 		};
+
 		vm.jogoGerado = null;
 		
 		//Metodos.
@@ -21,7 +22,7 @@
 		function gerarJogo() {
 			vm.jogoGerado = [];
 			var dataAtual = new Date();
-			
+
 			adicionarNumero(dataAtual.getMilliseconds());
 			
 			adicionarNumero(dataAtual.getMilliseconds() * 
@@ -51,7 +52,7 @@
 		}
 		
 		function validarNumero(numeroValidacao) {
-			return numeroValidacao == 0 ? vm.jogo.maiorNumero : numeroValidacao;
+			return numeroValidacao === 0 ? vm.jogo.maiorNumero : numeroValidacao;
 		}
 		
 		function adicionarNumero(numeroAdicao) {

@@ -9,20 +9,31 @@
 
         //constantes
         var NAO_ENCONTRADO = -1;
-		
-		//atributos.
-		vm.jogo = {
+        var LOTOFACIL = 1;
+        var QUANTIDADE_MAXIMA_TENTATIVAS = 1000;
+
+        var CONFIGURACAO_MEGASENA = {
 			menorNumero: 1,
 			maiorNumero: 60,
 			quantidadeNumeros: 6
 		};
 
+        var CONFIGURACAO_LOTOFACIL = {
+			menorNumero: 1,
+			maiorNumero: 25,
+			quantidadeNumeros: 15
+		};
+
+		//atributos.
+		vm.jogo = CONFIGURACAO_MEGASENA;
 		vm.jogoGerado = null;
 		
 		//Metodos.
 		vm.gerarJogo = gerarJogo;
 		
-		function gerarJogo() {
+		function gerarJogo(tipoJogo) {
+            vm.jogo = (tipoJogo == LOTOFACIL) ? CONFIGURACAO_LOTOFACIL : CONFIGURACAO_MEGASENA;
+
 			vm.jogoGerado = [];
 			var dataAtual = new Date();
 
@@ -59,9 +70,20 @@
 							dataAtual.getDate() *
 							(dataAtual.getMonth()+1) );
 
+            var tentativasGeracao = 0;
+
             //Caso a quantidade de jogos não tenha sido completada,
             //completo com base nos milisegundos.
+            //Tento gerar os jogos até uma determinada quantidade.
             while(vm.jogoGerado.length < vm.jogo.quantidadeNumeros) {
+                tentativasGeracao++;
+                console.log('tentativas =' + tentativasGeracao);
+
+                if(tentativasGeracao > QUANTIDADE_MAXIMA_TENTATIVAS) {
+                    alert('Não foi possível gerar todos os números. =(');
+                    break;
+                }
+
                 dataAtual = new Date();
                 adicionarNumero(dataAtual.getMilliseconds() *
                                 dataAtual.getMilliseconds());

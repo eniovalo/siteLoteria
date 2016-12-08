@@ -10,8 +10,10 @@
 </head>
 <body data-ng-app="LoteriaApp">
     <div data-ng-controller="LoteriaController as vm">
-	  <input type="button" value="gerar jogo" 
+	  <input type="button" value="gerar jogo Mega Sena"
 		data-ng-click="vm.gerarJogo()"/>
+      <input type="button" value="gerar jogo Lotofácil"
+		data-ng-click="vm.gerarJogo(1)"/>
 	  <fieldset>
 		<legend>Jogo gerado</legend>
 		<ul>
